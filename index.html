@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d18" />
+    <title>Universal Holographic AR</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-icon">◈</span>
+          <div>
+            <strong>HOLOSPACE</strong>
+            <small>UNIVERSAL AR LAB</small>
+          </div>
+        </div>
+        <span id="status" class="status">3D READY</span>
+      </header>
+
+      <main class="layout">
+        <section class="intro">
+          <p class="eyebrow">SPATIAL COMPUTING / 001</p>
+          <h1>Bring your ideas<br />into <span>reality.</span></h1>
+          <p class="description">
+            Upload an image or a 3D model and explore it in
+            an interactive 3D space.
+          </p>
+        </section>
+
+        <section class="controls">
+          <label for="assetFile">Upload an image or 3D model</label>
+          <input
+            id="assetFile"
+            type="file"
+            accept="image/*,.glb,.gltf"
+          />
+
+          <div class="button-row">
+            <button id="resetBtn" class="secondary">
+              Reset view
+            </button>
+            <button id="arBtn" class="primary">
+              Enter AR
+            </button>
+          </div>
+
+          <p class="help">
+            Desktop: drag to rotate, scroll to zoom.
+            AR: point at a surface and tap to place.
+          </p>
+
+          <label for="scaleSlider">
+            Object size <span id="scaleValue">1.0×</span>
+          </label>
+          <input
+            id="scaleSlider"
+            type="range"
+            min="0.3"
+            max="2.5"
+            value="1"
+            step="0.1"
+          />
+
+          <label for="rotationSlider">
+            Rotation
+          </label>
+          <input
+            id="rotationSlider"
+            type="range"
+            min="0"
+            max="360"
+            value="0"
+          />
+
+          <p id="message" role="status">
+            Choose an image or a GLB model to begin.
+          </p>
+        </section>
+
+        <section class="viewer">
+          <div class="viewer-heading">
+            <span>LIVE VIEWPORT</span>
+            <span class="live-dot">● LIVE</span>
+          </div>
+
+          <div id="viewport"></div>
+
+          <div class="viewer-footer">
+            <span>THREE.JS ENGINE</span>
+            <span>WEBXR • AR</span>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>HOLOSPACE © 2026</span>
+        <span>REALITY, REIMAGINED.</span>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
